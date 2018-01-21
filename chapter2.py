@@ -33,9 +33,18 @@ def diamond():
           ####
            ##'''
     spacer = 4
-    for i in range(2, 10, 2):
-        print(' ' * spacer, '#' * i)
+    i = 8
+    hashMarks = 2
+    flipMarks = False
+    while i > 0:
+        i -= 1
+        if hashMarks == 10 or flipMarks == True:
+            hashMarks -= 4
+            flipMarks = True
+            spacer += 2
+        print(' ' * abs(spacer), '#' * abs(hashMarks))
         spacer -= 1
+        hashMarks += 2
 
 diamond()
 
