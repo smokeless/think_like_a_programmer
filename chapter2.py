@@ -42,9 +42,30 @@ def diamond():
             hashMarks -= 4
             flipMarks = True
             spacer += 2
+
         print(' ' * abs(spacer), '#' * abs(hashMarks))
         spacer -= 1
         hashMarks += 2
 
-diamond()
+'''Write a program that reads a line of text, counting the 
+   number of words, identifying the length of the longest word, 
+   the greatest number of vowels in a word, and/or any other 
+   statistics you can think of.'''
 
+def wordStatistics(textLine:str):
+    cleanUp = textLine.split(' ')
+    wordList = []
+    tmp = ''
+    for item in cleanUp: #Sort out all garbage
+                         #Actually, this seems like a great time
+                         #to sort into a dictionary for more statistics.
+        for letter in item:
+            if letter.isalpha():
+                tmp += letter
+        wordList.append(tmp)
+        tmp = ''
+
+
+    print('Word count:', len(wordList))
+    print('Longest word:')
+wordStatistics('hello, this is a wordlist.')
